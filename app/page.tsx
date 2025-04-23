@@ -17,7 +17,7 @@ export default function Home() {
                 Elevate Your <span className="text-primary">Fantasy Premier League</span> Game
               </h1>
               <p className="text-xl text-muted-foreground">
-                Join thousands of players gaining the competitive edge with our expert insights and data-driven analysis.
+                Gain access to premium analytics from the world's top 50 Fantasy Premier League managers. Climb the ranks with data-driven decisions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button size="lg" asChild>

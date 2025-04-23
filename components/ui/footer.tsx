@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { BarChart3 } from "lucide-react";
 
 export function Footer() {
@@ -18,16 +18,16 @@ export function Footer() {
         </div>
         
         <div className="flex gap-8 text-sm text-muted-foreground">
-          <Link href="/about" className="hover:text-primary transition-colors">
+          <Link to="/about" className="hover:text-primary transition-colors">
             About
           </Link>
-          <Link href="/contact" className="hover:text-primary transition-colors">
+          <Link to="/contact" className="hover:text-primary transition-colors">
             Contact
           </Link>
-          <Link href="/privacy" className="hover:text-primary transition-colors">
+          <Link to="/privacy" className="hover:text-primary transition-colors">
             Privacy
           </Link>
-          <Link href="/terms" className="hover:text-primary transition-colors">
+          <Link to="/terms" className="hover:text-primary transition-colors">
             Terms
           </Link>
         </div>
