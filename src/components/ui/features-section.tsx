@@ -1,38 +1,39 @@
-import { BarChart3, Crown, ShieldCheck, TrendingUp } from "lucide-react";
+import { BarChart3, LineChart, PieChart, TrendingUp } from "lucide-react";
+
+const features = [
+  {
+    icon: <BarChart3 className="h-6 w-6" />,
+    title: "Advanced Analytics",
+    description: "Get deep insights into your data with our advanced analytics tools"
+  },
+  {
+    icon: <LineChart className="h-6 w-6" />,
+    title: "Real-time Tracking",
+    description: "Monitor your metrics in real-time with instant updates and alerts"
+  },
+  {
+    icon: <PieChart className="h-6 w-6" />,
+    title: "Visual Reports",
+    description: "Beautiful, easy-to-understand visual reports and dashboards"
+  },
+  {
+    icon: <TrendingUp className="h-6 w-6" />,
+    title: "Predictive Analysis",
+    description: "AI-powered predictions to help you stay ahead of trends"
+  }
+];
 
 export function FeaturesSection() {
-  const features = [
-    {
-      icon: <Crown className="h-6 w-6 text-primary" />,
-      title: "Elite Manager Insights",
-      description: "Access exclusive analysis from top 50 ranked FPL managers worldwide"
-    },
-    {
-      icon: <BarChart3 className="h-6 w-6 text-primary" />,
-      title: "Advanced Analytics",
-      description: "Deep statistical analysis beyond the basic FPL metrics for informed decisions"
-    },
-    {
-      icon: <TrendingUp className="h-6 w-6 text-primary" />,
-      title: "Price Prediction",
-      description: "Stay ahead with AI-powered player price change predictions and trends"
-    },
-    {
-      icon: <ShieldCheck className="h-6 w-6 text-primary" />,
-      title: "Captain Analysis",
-      description: "Data-driven captain picks with detailed underlying statistics"
-    }
-  ];
-
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-20">
-           <h2 className="text-[60px] text-[#2E0032] font-normal leading-[60px] tracking-[-3px] text-center">
-  Premium FPL <span className="text-[#00FF87]">Analytics</span> at Your Fingertips
-            </h2>
-          <p className="mt-6 text-base md:text-lg text-[#2E0032] max-w-2xl mx-auto">
-            Our platform provides exclusive insights that give you the edge in Fantasy Premier League. Used by mini-league champions and top 10k managers worldwide.
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-[#2E0032]">
+            Everything you need to 
+            <span className="text-[#00FF87]"> succeed</span>
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            Our comprehensive suite of tools and features helps you make the most of your data
           </p>
         </div>
 
@@ -40,19 +41,13 @@ export function FeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="relative bg-gradient-to-b from-muted/50 to-background p-6 rounded-3xl overflow-hidden group hover:shadow-lg transition-shadow"
+              className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-muted/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-
-              <div className="relative z-10">
-                <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
+              <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                {feature.icon}
               </div>
+              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground">{feature.description}</p>
             </div>
           ))}
         </div>

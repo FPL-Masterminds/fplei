@@ -1,99 +1,50 @@
-import { Button } from "@/components/ui/button";
-import { BarChart3, Github, Twitter } from "lucide-react";
+import { BarChart3 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24">
-      <div className="px-4 lg:px-8">
-        <div className="md:flex md:items-start md:justify-between">
-          <a
-            href="/"
-            className="flex items-center gap-x-2"
-            aria-label="FPL Elite Insights"
-          >
-            <BarChart3 className="h-6 w-6 text-primary" />
-            <span className="font-bold text-xl">FPL Elite Insights</span>
-          </a>
-          <ul className="flex list-none mt-6 md:mt-0 space-x-3">
-            <li>
-              <Button
-                variant="secondary"
-                size="icon"
-                className="h-10 w-10 rounded-full"
-                asChild
-              >
-                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-                  <Twitter className="h-5 w-5" />
-                </a>
-              </Button>
-            </li>
-            <li>
-              <Button
-                variant="secondary"
-                size="icon"
-                className="h-10 w-10 rounded-full"
-                asChild
-              >
-                <a href="https://github.com" target="_blank" aria-label="GitHub">
-                  <Github className="h-5 w-5" />
-                </a>
-              </Button>
-            </li>
-          </ul>
+    <footer className="border-t bg-slate-50">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="space-y-4">
+            <Link to="/" className="flex items-center gap-2">
+              <BarChart3 className="h-6 w-6 text-primary" />
+              <span className="font-bold text-xl">Analytics Pro</span>
+            </Link>
+            <p className="text-sm text-muted-foreground">
+              Making data analytics simple and accessible for everyone.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="font-semibold mb-4">Product</h3>
+            <ul className="space-y-2">
+              <li><Link to="/features" className="text-muted-foreground hover:text-primary">Features</Link></li>
+              <li><Link to="/pricing" className="text-muted-foreground hover:text-primary">Pricing</Link></li>
+              <li><Link to="/docs" className="text-muted-foreground hover:text-primary">Documentation</Link></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="font-semibold mb-4">Company</h3>
+            <ul className="space-y-2">
+              <li><Link to="/about" className="text-muted-foreground hover:text-primary">About</Link></li>
+              <li><Link to="/contact" className="text-muted-foreground hover:text-primary">Contact</Link></li>
+              <li><Link to="/careers" className="text-muted-foreground hover:text-primary">Careers</Link></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="font-semibold mb-4">Legal</h3>
+            <ul className="space-y-2">
+              <li><Link to="/privacy" className="text-muted-foreground hover:text-primary">Privacy</Link></li>
+              <li><Link to="/terms" className="text-muted-foreground hover:text-primary">Terms</Link></li>
+            </ul>
+          </div>
         </div>
-        <div className="border-t mt-6 pt-6 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10">
-          <nav className="lg:mt-0 lg:col-[4/11]">
-            <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end">
-              <li className="my-1 mx-2 shrink-0">
-                <a
-                  href="/about"
-                  className="text-sm text-primary underline-offset-4 hover:underline"
-                >
-                  About
-                </a>
-              </li>
-              <li className="my-1 mx-2 shrink-0">
-                <a
-                  href="/contact"
-                  className="text-sm text-primary underline-offset-4 hover:underline"
-                >
-                  Contact
-                </a>
-              </li>
-              <li className="my-1 mx-2 shrink-0">
-                <a
-                  href="/premium"
-                  className="text-sm text-primary underline-offset-4 hover:underline"
-                >
-                  Premium
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div className="mt-6 lg:mt-0 lg:col-[4/11]">
-            <ul className="list-none flex flex-wrap -my-1 -mx-3 lg:justify-end">
-              <li className="my-1 mx-3 shrink-0">
-                <a
-                  href="/privacy"
-                  className="text-sm text-muted-foreground underline-offset-4 hover:underline"
-                >
-                  Privacy
-                </a>
-              </li>
-              <li className="my-1 mx-3 shrink-0">
-                <a
-                  href="/terms"
-                  className="text-sm text-muted-foreground underline-offset-4 hover:underline"
-                >
-                  Terms
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="mt-6 text-sm leading-6 text-muted-foreground whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
-            <div>© 2024 FPL Elite Insights</div>
-            <div>All rights reserved</div>
-          </div>
+        
+        <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
+          © {new Date().getFullYear()} Analytics Pro. All rights reserved.
         </div>
       </div>
     </footer>
